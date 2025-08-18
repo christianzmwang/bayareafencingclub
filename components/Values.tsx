@@ -1,43 +1,47 @@
 export default function Values() {
   const values = [
     {
+      title: 'Excellence',
+      description: 'We strive for excellence in everything we do, from technical skills to character development.',
+      icon: '🏆'
+    },
+    {
       title: 'Teamwork',
-      description: 'Working together to achieve common goals and support each other\'s growth.',
-      icon: '🤝',
-      color: 'from-blue-500 to-blue-600'
+      description: 'Fencing may be individual, but we succeed as a team, supporting and encouraging each other.',
+      icon: '🤝'
     },
     {
       title: 'Sportsmanship',
-      description: 'Displaying respect, fairness, and graciousness in victory and defeat.',
-      icon: '🏆',
-      color: 'from-green-500 to-green-600'
+      description: 'We compete with honor, respect our opponents, and celebrate both victory and defeat with grace.',
+      icon: '⚔️'
     },
     {
       title: 'Integrity',
-      description: 'Maintaining honesty, ethical behavior, and strong moral principles.',
-      icon: '⚖️',
-      color: 'from-purple-500 to-purple-600'
+      description: 'We conduct ourselves with honesty, fairness, and moral uprightness in all situations.',
+      icon: '🛡️'
     }
   ]
 
   return (
-    <section className="section-padding bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
-      <div className="container-custom">
+    <section id="values" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Core Values</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            These principles guide everything we do at Bay Area Fencing Club
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Our Core Values
+          </h2>
+          <div className="w-24 h-1 bg-primary dark:bg-primary-light mx-auto"></div>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
-            <div key={index} className="text-center">
-              <div className={`w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br ${value.color} flex items-center justify-center text-3xl`}>
-                {value.icon}
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{value.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{value.description}</p>
+            <div key={index} className="text-center p-6 bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="text-4xl mb-4">{value.icon}</div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                {value.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                {value.description}
+              </p>
             </div>
           ))}
         </div>

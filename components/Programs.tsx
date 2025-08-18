@@ -3,83 +3,85 @@ import { Calendar, Users, Trophy, Target } from 'lucide-react'
 export default function Programs() {
   const programs = [
     {
-      title: 'BAFC 2025 Summer Camp',
-      description: 'Join our exciting summer fencing camp for all skill levels. Learn fencing fundamentals, improve technique, and make new friends.',
-      icon: Calendar,
-      color: 'from-blue-500 to-blue-600',
-      features: ['All skill levels welcome', 'Professional instruction', 'Equipment provided', 'Fun and engaging activities']
+      name: 'Beginner Fencing',
+      description: 'Perfect for those new to fencing. Learn basic techniques, footwork, and safety protocols.',
+      duration: '8 weeks',
+      ageGroup: 'Ages 8+',
+      price: '$299',
+      features: ['Equipment provided', 'Basic techniques', 'Safety training', 'Fun atmosphere']
     },
     {
-      title: 'Beginner Classes',
-      description: 'Perfect for those new to fencing. Learn the basics of footwork, blade work, and fencing strategy.',
-      icon: Target,
-      color: 'from-green-500 to-green-600',
-      features: ['Basic footwork', 'Blade work fundamentals', 'Safety training', 'Introduction to rules']
+      name: 'Intermediate Training',
+      description: 'For fencers with basic skills. Develop advanced techniques and tactical thinking.',
+      duration: '12 weeks',
+      ageGroup: 'Ages 10+',
+      price: '$399',
+      features: ['Advanced techniques', 'Tactical training', 'Competition prep', 'Individual coaching']
     },
     {
-      title: 'Advanced Training',
-      description: 'For experienced fencers looking to compete at higher levels and refine their competitive skills.',
-      icon: Trophy,
-      color: 'from-purple-500 to-purple-600',
-      features: ['Advanced techniques', 'Competition strategy', 'Physical conditioning', 'Mental preparation']
+      name: 'Elite Competition',
+      description: 'High-level training for competitive fencers. Intensive coaching and tournament preparation.',
+      duration: '16 weeks',
+      ageGroup: 'Ages 12+',
+      price: '$599',
+      features: ['Elite coaching', 'Tournament prep', 'Video analysis', 'Mental training']
     },
     {
-      title: 'Group Sessions',
-      description: 'Train with peers in a supportive group environment that fosters teamwork and friendly competition.',
-      icon: Users,
-      color: 'from-orange-500 to-orange-600',
-      features: ['Peer learning', 'Team building', 'Friendly competition', 'Social development']
+      name: 'Adult Fencing',
+      description: 'Specialized programs for adult learners. Flexible scheduling and personalized instruction.',
+      duration: '10 weeks',
+      ageGroup: 'Ages 18+',
+      price: '$349',
+      features: ['Flexible scheduling', 'Personalized instruction', 'Fitness focus', 'Social fencing']
     }
   ]
 
   return (
-    <section id="programs" className="section-padding bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
-      <div className="container-custom">
+    <section id="programs" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Programs</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            From beginners to advanced competitors, we have programs for every fencer
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Our Programs
+          </h2>
+          <div className="w-24 h-1 bg-primary dark:bg-primary-light mx-auto"></div>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">
+            From beginners to elite competitors, we have programs for every skill level
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {programs.map((program, index) => (
-            <div key={index} className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${program.color} flex items-center justify-center text-white mb-6`}>
-                <program.icon className="w-8 h-8" />
+            <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                  {program.name}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                  {program.description}
+                </p>
+                <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
+                  <span>Duration: {program.duration}</span>
+                  <span>Age: {program.ageGroup}</span>
+                </div>
+                <div className="text-3xl font-bold text-primary dark:text-primary-light">
+                  {program.price}
+                </div>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{program.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{program.description}</p>
-              
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-6">
                 {program.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                  <li key={featureIndex} className="flex items-center text-gray-600 dark:text-gray-300">
+                    <span className="text-primary dark:text-primary-light mr-2">✓</span>
+                    {feature}
                   </li>
                 ))}
               </ul>
               
-              <div className="mt-6">
-                <a href="#free-trial" className="btn-primary">
-                  Learn More
-                </a>
-              </div>
+              <button className="w-full bg-primary hover:bg-primary-dark text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200">
+                Enroll Now
+              </button>
             </div>
           ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <div className="bg-primary rounded-2xl p-8 text-white">
-            <h3 className="text-3xl font-bold mb-4">Ready to Start Your Fencing Journey?</h3>
-            <p className="text-xl mb-6 opacity-90">
-              Book your free trial class today and experience the excitement of fencing!
-            </p>
-            <a href="#free-trial" className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
-              Book Free Trial Class
-            </a>
-          </div>
         </div>
       </div>
     </section>
