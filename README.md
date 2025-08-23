@@ -76,7 +76,7 @@ bayareafencingclub/
 │   ├── layout.tsx         # Root layout with ThemeProvider
 │   └── page.tsx           # Homepage
 ├── components/             # React components
-│   ├── Header.tsx         # Navigation header with theme toggle
+│   ├── Navbar.tsx         # Sticky navigation bar with theme toggle
 │   ├── Hero.tsx           # Hero section
 │   ├── About.tsx          # About section
 │   ├── Values.tsx         # Core values
@@ -97,7 +97,7 @@ bayareafencingclub/
 
 The website includes comprehensive dark mode support:
 
-- **Theme Toggle**: Click the sun/moon icon in the header to switch themes
+- **Theme Toggle**: Click the sun/moon icon in the navbar to switch themes
 - **System Preference**: Automatically detects and applies user's system theme preference
 - **Persistent Storage**: Remembers user's theme choice across sessions
 - **Smooth Transitions**: Elegant color transitions between light and dark modes

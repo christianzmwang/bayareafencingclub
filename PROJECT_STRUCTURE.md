@@ -25,7 +25,7 @@ bayareafencingclub/
 │   └── resources/               # Resources page
 │       └── page.tsx
 ├── components/                   # React components
-│   ├── Header.tsx               # Updated with glass effect & new nav
+│   ├── Navbar.tsx               # Updated with glass effect & new nav (sticky)
 │   ├── Hero.tsx                 # Home page hero
 │   ├── About.tsx                # About section
 │   ├── Values.tsx               # Values section
@@ -89,7 +89,7 @@ bayareafencingclub/
    - ScheduleCalendar - Placeholder for calendar view
    - BookingInfo - Placeholder for booking details
 
-3. **Updated Header**
+3. **Updated Navbar**
    - Glass morphism effect (backdrop-blur, transparency)
    - Navigation to all new pages
    - Responsive mobile menu
