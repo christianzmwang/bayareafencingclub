@@ -37,7 +37,7 @@ export default function Programs() {
   ]
 
   return (
-    <section id="programs" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+    <section id="programs" className="py-20 px-4 bg-gray-50 dark:bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -51,7 +51,7 @@ export default function Programs() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {programs.map((program, index) => (
-            <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-800">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                   {program.name}

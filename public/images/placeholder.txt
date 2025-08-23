@@ -1,0 +1,27 @@
+This is a placeholder file to maintain the directory structure.
+
+To add your images:
+
+1. Download images from Google Drive
+2. Optimize them using tools like:
+   - TinyPNG (https://tinypng.com/)
+   - ImageOptim (Mac app)
+   - Squoosh (https://squoosh.app/)
+3. Place them in the appropriate subdirectory:
+   - hero/ - for main banner images
+   - about/ - for about section images
+   - values/ - for values section images
+   - locations/ - for facility/location images
+   - programs/ - for training/program images
+   - team/ - for team member photos
+   - general/ - for images used across multiple sections
+
+4. Use the OptimizedImage component in your React components
+
+Example:
+import { HeroImage } from '@/components/OptimizedImage'
+
+<HeroImage 
+  src="/images/hero/fencing-banner.webp" 
+  alt="Fencing tournament banner" 
+/>

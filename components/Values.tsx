@@ -2,28 +2,24 @@ export default function Values() {
   const values = [
     {
       title: 'Excellence',
-      description: 'We strive for excellence in everything we do, from technical skills to character development.',
-      icon: '🏆'
+      description: 'We strive for excellence in everything we do, from technical skills to character development.'
     },
     {
       title: 'Teamwork',
-      description: 'Fencing may be individual, but we succeed as a team, supporting and encouraging each other.',
-      icon: '🤝'
+      description: 'Fencing may be individual, but we succeed as a team, supporting and encouraging each other.'
     },
     {
       title: 'Sportsmanship',
-      description: 'We compete with honor, respect our opponents, and celebrate both victory and defeat with grace.',
-      icon: '⚔️'
+      description: 'We compete with honor, respect our opponents, and celebrate both victory and defeat with grace.'
     },
     {
       title: 'Integrity',
-      description: 'We conduct ourselves with honesty, fairness, and moral uprightness in all situations.',
-      icon: '🛡️'
+      description: 'We conduct ourselves with honesty, fairness, and moral uprightness in all situations.'
     }
   ]
 
   return (
-    <section id="values" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+    <section id="values" className="py-20 px-4 bg-gray-50 dark:bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -34,8 +30,7 @@ export default function Values() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
-            <div key={index} className="text-center p-6 bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="text-4xl mb-4">{value.icon}</div>
+            <div key={index} className="text-center p-6 bg-white dark:bg-gray-900 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-800">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                 {value.title}
               </h3>
