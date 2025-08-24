@@ -18,11 +18,10 @@ export default function Navbar() {
   ]
 
   const dropdownItems = [
-    { href: '/coaches', label: 'Coaches' },
-    { href: '/gallery', label: 'Gallery' },
-    { href: '/camp', label: 'Camp' },
+    { href: 'https://bayareafencing.pike13.com/accounts/sign_in', label: 'Account', external: true },
     { href: '/careers', label: 'Careers' },
-    { href: '/resources', label: 'Resources' }
+    { href: '/coaches', label: 'Coaches' },
+    { href: '/resources', label: "Parent's Resources" }
   ]
 
   const toggleDropdown = () => {
@@ -133,6 +132,8 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
                   className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors duration-200 text-base font-medium px-4 py-2"
                   onClick={() => setIsDropdownOpen(false)}
                 >
@@ -167,8 +168,10 @@ export default function Navbar() {
               {dropdownItems.map((item) => (
                 <a 
                   key={item.href}
-                  href={item.href} 
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors duration-200"
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}

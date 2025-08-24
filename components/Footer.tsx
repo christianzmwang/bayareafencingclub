@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-8 px-4">
+    <footer className="bg-red-700 text-white py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -25,7 +25,7 @@ export default function Footer() {
               href="https://www.instagram.com/bay_area_fencing/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-pink-500 transition-colors duration-200"
+              className="text-red-200 hover:text-pink-300 transition-colors duration-200"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -34,7 +34,7 @@ export default function Footer() {
               href="https://www.facebook.com/bayareafencing"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
+              className="text-red-200 hover:text-blue-300 transition-colors duration-200"
               aria-label="Facebook"
             >
               <Facebook className="w-6 h-6" />
@@ -43,7 +43,7 @@ export default function Footer() {
               href="https://www.tiktok.com/@bayareafencingclub?_t=8riZZTpldPS&_r=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+              className="text-red-200 hover:text-white transition-colors duration-200"
               aria-label="TikTok"
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -54,7 +54,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/bafencing/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-500 transition-colors duration-200"
+              className="text-red-200 hover:text-blue-300 transition-colors duration-200"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-6 h-6" />
@@ -63,8 +63,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-4 mt-4 text-left">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-red-600 pt-4 mt-4 text-left">
+          <p className="text-red-100 text-sm">
             © {currentYear} Bay Area Fencing Club. All rights reserved.
           </p>
         </div>

@@ -255,7 +255,14 @@ export default function ProgramsPage() {
               Generally, don't go overboard. Your children will grow into their fencing gear, and outgrow it before you know it.
             </p>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-              💡 There is a tutorial about how to purchase equipment under <strong>Resources</strong> Page
+              💡 There is a tutorial about how to purchase equipment under{' '}
+              <a 
+                href="/resources" 
+                className="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 font-semibold underline"
+              >
+                Parent's Resources
+              </a>
+              {' '}Page
             </p>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
               You can find equipment at the following links:

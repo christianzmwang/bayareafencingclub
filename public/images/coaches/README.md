@@ -1,19 +1,23 @@
 # Coach Images
 
-This directory contains placeholder paths for coach images. Replace these with actual coach photos:
+This directory contains the profile photos for Bay Area Fencing Club coaches.
 
-## Los Gatos Coaches
-- `lisa-placeholder.jpg` - Coach Lisa (Club Manager)
-- `vakhob-placeholder.jpg` - Coach Vakhob (Foil Coach)
-- `danny-placeholder.jpg` - Coach Danny (Instructor)
-- `nate-placeholder.jpg` - Coach Nate (Instructor)
-- `matt-placeholder.jpg` - Coach Matt (Instructor)
-- `michael-placeholder.jpg` - Coach Michael (Instructor)
-- `james-placeholder.jpg` - Coach James (Instructor)
+## Los Gatos Coaches (8 coaches)
+✅ `lisa.jpg` - Coach Lisa (Club Manager)
+✅ `vakhob.jpg` - Coach Vakhob (Foil Coach)
+✅ `danny.jpg` - Coach Danny (Saber Coach)
+✅ `nate.jpg` - Coach Nate (Youth Director)
+✅ `matt.jpg` - Coach Matt (Epee Coach)
+✅ `michael.jpg` - Coach Michael (Maestro d'Escrime Épée)
+✅ `james.jpg` - Coach James (Épée / Foil Coach)
+✅ `susanna.jpg` - Coach Susanna (Fencing Coach)
 
-## Pleasanton Coaches
-- `sandro-placeholder.jpg` - Coach Sandro (Maestro di Scherma, Foil Coach)
-- `mykola-placeholder.jpg` - Coach Mykola (Instructor)
+## Pleasanton Coaches (2 coaches)
+✅ `sandro.jpg` - Coach Sandro (Maestro di Scherma, Foil Coach)
+✅ `mykola.jpg` - Coach Mykola (Coach)
+
+## Status
+✅ All 10 coach images have been added and are now displaying on the coaches page.
 
 ## Image Requirements
 - Recommended size: 400x400px or similar square aspect ratio
