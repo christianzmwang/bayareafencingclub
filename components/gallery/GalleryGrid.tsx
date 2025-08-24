@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import OptimizedImage from '@/components/OptimizedImage'
 import GalleryImage from './GalleryImage'
 import { X } from 'lucide-react'
@@ -395,11 +395,20 @@ export default function GalleryGrid() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const [imageLoadStates, setImageLoadStates] = useState<{[key: number]: {width: number, height: number, loaded: boolean}}>({})
   const [columns, setColumns] = useState(4)
+  const [visibleCount, setVisibleCount] = useState(20) // Start with 20 images
   const gridRef = useRef<HTMLDivElement>(null)
 
-  const filteredImages = selectedCategory === 'all' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory)
+  const filteredImages = useMemo(() => 
+    selectedCategory === 'all' 
+      ? galleryImages 
+      : galleryImages.filter(img => img.category === selectedCategory),
+    [selectedCategory]
+  )
+
+  const visibleImages = useMemo(() => 
+    filteredImages.slice(0, visibleCount),
+    [filteredImages, visibleCount]
+  )
 
   // Handle responsive columns
   useEffect(() => {
@@ -421,6 +430,27 @@ export default function GalleryGrid() {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+
+  // Lazy loading on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+      
+      // Load more images when nearing bottom
+      if (scrollPosition > documentHeight - 1000 && visibleCount < filteredImages.length) {
+        setVisibleCount(prev => Math.min(prev + 10, filteredImages.length))
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [visibleCount, filteredImages.length])
+
+  // Reset visible count when category changes
+  useEffect(() => {
+    setVisibleCount(20)
+  }, [selectedCategory])
 
   // Handle keyboard navigation in lightbox
   useEffect(() => {
@@ -453,7 +483,7 @@ export default function GalleryGrid() {
   }, [selectedImage, filteredImages])
 
   // Calculate image dimensions for dynamic sizing
-  const getImageHeight = (imageId: number, baseWidth: number) => {
+  const getImageHeight = useCallback((imageId: number, baseWidth: number) => {
     const imageState = imageLoadStates[imageId]
     if (!imageState || !imageState.loaded) {
       return 200 // Default height while loading
@@ -461,23 +491,23 @@ export default function GalleryGrid() {
 
     const aspectRatio = imageState.width / imageState.height
     return Math.round(baseWidth / aspectRatio)
-  }
+  }, [imageLoadStates])
 
   // Get column width based on container and number of columns
-  const getColumnWidth = () => {
+  const getColumnWidth = useCallback(() => {
     if (!gridRef.current) return 300
     const containerWidth = gridRef.current.offsetWidth
     const gap = 12 // 3 * 4px gap
     return Math.floor((containerWidth - (gap * (columns - 1))) / columns)
-  }
+  }, [columns])
 
   // Handle image load to capture dimensions
-  const handleImageLoad = (imageId: number, width: number, height: number) => {
+  const handleImageLoad = useCallback((imageId: number, width: number, height: number) => {
     setImageLoadStates(prev => ({
       ...prev,
       [imageId]: { width, height, loaded: true }
     }))
-  }
+  }, [])
 
   const openLightbox = (imageId: number) => {
     setSelectedImage(imageId)
@@ -518,7 +548,7 @@ export default function GalleryGrid() {
           ref={gridRef}
           className="columns-2 sm:columns-3 lg:columns-4 xl:columns-5 gap-3 space-y-3"
         >
-          {filteredImages.map((image) => {
+          {visibleImages.map((image, idx) => {
             const columnWidth = getColumnWidth()
             const imageHeight = getImageHeight(image.id, columnWidth)
             
@@ -528,7 +558,9 @@ export default function GalleryGrid() {
                 className="group relative overflow-hidden bg-gray-100 dark:bg-gray-800 cursor-pointer transition-all duration-300 hover:shadow-2xl hover:z-10 break-inside-avoid mb-3"
                 style={{ 
                   width: '100%',
-                  height: imageHeight
+                  height: imageHeight,
+                  contentVisibility: 'auto',
+                  containIntrinsicSize: `${imageHeight}px`
                 }}
                 onClick={() => openLightbox(image.id)}
               >
@@ -540,6 +572,8 @@ export default function GalleryGrid() {
                   height={400}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                  priority={idx < 6} // Prioritize first 6 images
+                  quality={idx < 6 ? 85 : 75} // Higher quality for visible images
                   onLoad={(w, h) => handleImageLoad(image.id, w, h)}
                 />
                 
@@ -554,6 +588,16 @@ export default function GalleryGrid() {
             )
           })}
         </div>
+
+        {/* Loading indicator for more images */}
+        {visibleCount < filteredImages.length && (
+          <div className="text-center py-8">
+            <div className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary mr-2"></div>
+              <span className="text-gray-600 dark:text-gray-400">Loading more images...</span>
+            </div>
+          </div>
+        )}
 
         {/* Show message if no images in category */}
         {filteredImages.length === 0 && (

@@ -18,6 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://images.spr.so" crossOrigin="" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider>
           {children}
