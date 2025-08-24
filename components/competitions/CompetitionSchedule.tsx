@@ -50,7 +50,7 @@ export default function CompetitionSchedule() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+          <table className="w-full bg-white dark:bg-gray-900 shadow-lg overflow-hidden">
             <thead className="bg-yellow-500 text-white">
               <tr>
                 <th className="px-6 py-4 text-left">
@@ -94,7 +94,7 @@ export default function CompetitionSchedule() {
                     {comp.location}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">
-                    <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-xs font-medium">
+                    <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs font-medium">
                       {comp.type}
                     </span>
                   </td>

@@ -12,54 +12,53 @@ export default function ContactCoaches() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              Program Inquiries
+              🤺 Los Gatos Location
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Questions about which program is right for you or your child? Let's discuss your goals and find the perfect fit.
+              Meet our experienced coaches including Coach Lisa (Club Manager), Coach Vakhob (Foil Coach), and our dedicated instructional team.
             </p>
             <a 
               href="mailto:coaches@bayareafencingclub.com" 
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
-              Contact Coaches
+              Contact Los Gatos Team
             </a>
           </div>
           
           <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              Private Lessons
+              🤺 Pleasanton Location
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Interested in one-on-one instruction? Schedule a private lesson to accelerate your progress.
+              Train with Maestro Sandro (Maestro di Scherma) and Coach Mykola, bringing traditional Italian fencing excellence to your training.
             </p>
             <a 
-              href="mailto:privatelessons@bayareafencingclub.com" 
+              href="mailto:coaches@bayareafencingclub.com" 
               className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
             >
-              Book Private Lesson
+              Contact Pleasanton Team
             </a>
           </div>
         </div>
         
         <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-lg">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-            Schedule a Visit
+            Try a Free Trial Class
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            The best way to understand our coaching approach is to visit our club. Come observe a class or meet with our coaches to learn more about our programs.
+            The best way to experience our coaching approach is to join us for a free trial class. Meet our coaches and see if fencing is right for you!
           </p>
           <div className="space-y-4">
             <p className="text-gray-600 dark:text-gray-300">
-              <strong>Visit Hours:</strong> Monday-Friday 4:00 PM - 8:00 PM, Saturday 9:00 AM - 5:00 PM
-            </p>
-            <p className="text-gray-600 dark:text-gray-300">
-              <strong>Phone:</strong> (555) 123-FENCE
+              <strong>Available at both locations:</strong> Los Gatos and Pleasanton
             </p>
             <a 
-              href="mailto:visit@bayareafencingclub.com" 
+              href="https://calendly.com/lisaposthumus-pfn_"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
             >
-              Schedule Visit
+              Schedule Free Trial Class
             </a>
           </div>
         </div>

@@ -12,9 +12,9 @@ export default function CompetitionTypes() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Local Competitions */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <div className="bg-white dark:bg-gray-800 shadow-lg p-8">
             <div className="flex items-center mb-6">
-              <div className="w-4 h-4 bg-green-500 rounded-full mr-4"></div>
+              <div className="w-4 h-4 bg-green-500 mr-4"></div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Local</h3>
             </div>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
@@ -32,7 +32,7 @@ export default function CompetitionTypes() {
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">•</span>
-                Events listed on{' '}
+                Events listed on {' '}
                 <a 
                   href="https://www.askfred.net" 
                   target="_blank" 
@@ -62,9 +62,9 @@ export default function CompetitionTypes() {
           </div>
 
           {/* Regional Competitions */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <div className="bg-white dark:bg-gray-800 shadow-lg p-8">
             <div className="flex items-center mb-6">
-              <div className="w-4 h-4 bg-blue-500 rounded-full mr-4"></div>
+              <div className="w-4 h-4 bg-blue-500 mr-4"></div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Regional</h3>
             </div>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
@@ -94,7 +94,7 @@ export default function CompetitionTypes() {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>
-                Register on{' '}
+                Register on {' '}
                 <a 
                   href="https://member.usafencing.org/search/tournaments" 
                   target="_blank" 
@@ -108,9 +108,9 @@ export default function CompetitionTypes() {
           </div>
 
           {/* National Competitions */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <div className="bg-white dark:bg-gray-800 shadow-lg p-8">
             <div className="flex items-center mb-6">
-              <div className="w-4 h-4 bg-red-500 rounded-full mr-4"></div>
+              <div className="w-4 h-4 bg-red-500 mr-4"></div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">National</h3>
             </div>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">

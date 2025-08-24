@@ -50,8 +50,8 @@ export default function CompetitionProcedures() {
         {/* Key Requirements */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {procedures.map((procedure, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-              <div className="flex items-center justify-center w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-lg mb-4 text-yellow-600 dark:text-yellow-400">
+            <div key={index} className="bg-white dark:bg-gray-800 shadow-lg p-6">
+              <div className="flex items-center justify-center w-12 h-12 bg-yellow-100 dark:bg-yellow-900 mb-4 text-yellow-600 dark:text-yellow-400">
                 {procedure.icon}
               </div>
               <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
@@ -65,14 +65,14 @@ export default function CompetitionProcedures() {
         </div>
 
         {/* Competition Day Steps */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+        <div className="bg-white dark:bg-gray-800 shadow-lg p-8">
           <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white text-center">
             Competition Day Step-by-Step Guide
           </h3>
           <div className="space-y-4">
             {competitionSteps.map((step, index) => (
               <div key={index} className="flex items-start">
-                <div className="flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1">
+                <div className="flex-shrink-0 w-8 h-8 bg-yellow-500 text-white flex items-center justify-center text-sm font-bold mr-4 mt-1">
                   {index + 1}
                 </div>
                 <div className="flex-1">
@@ -102,7 +102,7 @@ export default function CompetitionProcedures() {
 
         {/* Call to Action */}
         <div className="text-center mt-12">
-          <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-8 max-w-2xl mx-auto">
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 p-8 max-w-2xl mx-auto">
             <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
               Ready to Compete?
             </h3>
@@ -114,7 +114,7 @@ export default function CompetitionProcedures() {
                 href="https://calendly.com/lisaposthumus-pfn_" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="btn-primary bg-yellow-500 hover:bg-yellow-600 text-white inline-flex items-center"
+                className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-white inline-flex items-center font-semibold transition-colors duration-200"
               >
                 Free Trial Class <ExternalLink className="w-4 h-4 ml-2" />
               </a>
