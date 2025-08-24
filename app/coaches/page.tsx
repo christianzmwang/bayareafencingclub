@@ -5,7 +5,7 @@ import CoachProfiles from '@/components/coaches/CoachProfiles'
 
 export default function CoachesPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white dark:bg-black">
       <Navbar />
       <CoachesHero />
       <CoachProfiles />

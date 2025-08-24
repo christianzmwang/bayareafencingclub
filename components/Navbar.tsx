@@ -149,7 +149,7 @@ export default function Navbar() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 backdrop-blur-md bg-white/80 dark:bg-black/80 border-t border-white/20 dark:border-gray-800/50">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 backdrop-blur-md bg-white/70 dark:bg-black/70 border-t border-white/20 dark:border-gray-800/50">
             {mainNavigationItems.map((item) => (
               <a 
                 key={item.href}

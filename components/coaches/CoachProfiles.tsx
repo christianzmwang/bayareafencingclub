@@ -1,6 +1,22 @@
+'use client'
+
+import { useState } from 'react'
 import OptimizedImage from '@/components/OptimizedImage'
 
+interface Coach {
+  name: string
+  title: string
+  location: string
+  specialties: string[]
+  experience: string
+  achievements: string[]
+  bio: string
+  image: string
+}
+
 export default function CoachProfiles() {
+  const [selectedCoach, setSelectedCoach] = useState<Coach | null>(null)
+
   const losGatosCoaches = [
     {
       name: "Coach Lisa",
@@ -150,207 +166,241 @@ export default function CoachProfiles() {
 
   const allCoaches = [...losGatosCoaches, ...pleasantonCoaches]
 
-  return (
-    <section className="py-20 bg-white dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  const openModal = (coach: Coach) => {
+    setSelectedCoach(coach)
+  }
 
-        {/* Los Gatos Coaches */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-left">
-            Los Gatos Location
-          </h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {losGatosCoaches.map((coach, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 dark:bg-gray-700 overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="p-6">
-                  <div className="flex">
-                    <div className="flex-1 pr-6">
-                      <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                        {coach.name}
-                      </h4>
-                      <p className="text-blue-600 dark:text-blue-400 font-semibold mb-4">
-                        {coach.title}
-                      </p>
-                      
-                      <div className="mb-4">
-                        <h5 className="font-semibold text-gray-900 dark:text-white mb-2">Specialties:</h5>
-                        <div className="flex flex-wrap gap-2">
-                          {coach.specialties.map((specialty: string, idx: number) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm"
-                            >
-                              {specialty}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+  const closeModal = () => {
+    setSelectedCoach(null)
+  }
 
-                      {coach.achievements.length > 0 && (
-                        <div className="mb-4">
-                          <h5 className="font-semibold text-gray-900 dark:text-white mb-2">Achievements:</h5>
-                          <ul className="space-y-1">
-                            {coach.achievements.map((achievement: string, idx: number) => (
-                              <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg className="w-3 h-3 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                </svg>
-                                {achievement}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                        {coach.bio}
-                      </p>
-
-                      <div className="flex items-center">
-                        <span className="text-sm text-gray-500 dark:text-gray-400">
-                          {coach.experience} experience
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <div className={coach.name === "Coach Danny" ? "w-48 h-full flex-shrink-0" : "w-48 h-48 flex-shrink-0"}>
-                      {coach.image && !coach.image.includes('placeholder') ? (
-                        <OptimizedImage
-                          src={coach.image}
-                          alt={`${coach.name} - ${coach.title}`}
-                          width={192}
-                          height={coach.name === "Coach Danny" ? 400 : 192}
-                          className={coach.name === "Coach Danny" ? "w-48 h-full object-cover" : "w-48 h-48 object-cover"}
-                        />
-                      ) : (
-                        <div className={coach.name === "Coach Danny" ? "w-48 h-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center" : "w-48 h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center"}>
-                          <span className="text-gray-600 dark:text-gray-400 text-3xl font-bold">
-                            {coach.name.split(' ').map((n: string) => n[0]).join('')}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Pleasanton Coaches */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-left">
-            Pleasanton Location
-          </h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {pleasantonCoaches.map((coach, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 dark:bg-gray-700 overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="p-6">
-                  <div className="flex">
-                    <div className="flex-1 pr-6">
-                      <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                        {coach.name}
-                      </h4>
-                      <p className="text-blue-600 dark:text-blue-400 font-semibold mb-4">
-                        {coach.title}
-                      </p>
-                      
-                      <div className="mb-4">
-                        <h5 className="font-semibold text-gray-900 dark:text-white mb-2">Specialties:</h5>
-                        <div className="flex flex-wrap gap-2">
-                          {coach.specialties.map((specialty: string, idx: number) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm"
-                            >
-                              {specialty}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {coach.achievements.length > 0 && (
-                        <div className="mb-4">
-                          <h5 className="font-semibold text-gray-900 dark:text-white mb-2">Achievements:</h5>
-                          <ul className="space-y-1">
-                            {coach.achievements.map((achievement: string, idx: number) => (
-                              <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg className="w-3 h-3 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                </svg>
-                                {achievement}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                        {coach.bio}
-                      </p>
-
-                      <div className="flex items-center">
-                        <span className="text-sm text-gray-500 dark:text-gray-400">
-                          {coach.experience} experience
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <div className="w-48 h-48 flex-shrink-0">
-                      {coach.image && !coach.image.includes('placeholder') ? (
-                        <OptimizedImage
-                          src={coach.image}
-                          alt={`${coach.name} - ${coach.title}`}
-                          width={192}
-                          height={192}
-                          className="w-48 h-48 object-cover"
-                        />
-                      ) : (
-                        <div className="w-48 h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-                          <span className="text-gray-600 dark:text-gray-400 text-3xl font-bold">
-                            {coach.name.split(' ').map((n: string) => n[0]).join('')}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Free Trial Class Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Try a Free Trial Class
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              The best way to experience our coaching approach is to join us for a free trial class. Meet our coaches and see if fencing is right for you!
+  const CoachCard = ({ coach, onClick }: { coach: Coach; onClick: () => void }) => (
+    <div
+      className="bg-gray-50 dark:bg-gray-800 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+      onClick={onClick}
+    >
+      <div className="p-6">
+        <div className="flex">
+          <div className="flex-1 pr-6">
+            <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              {coach.name}
+            </h4>
+            <p className="text-red-600 dark:text-red-400 font-semibold mb-4">
+              {coach.title}
             </p>
-            <div className="space-y-4">
-              <p className="text-gray-600 dark:text-gray-300">
-                <strong>Available at both locations:</strong> Los Gatos and Pleasanton
-              </p>
-              <a 
-                href="https://calendly.com/lisaposthumus-pfn_"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
-              >
-                Schedule Free Trial Class
-              </a>
+            
+            <div className="mb-4">
+              <h5 className="font-semibold text-gray-900 dark:text-white mb-2">Specialties:</h5>
+              <div className="flex flex-wrap gap-2">
+                {coach.specialties.map((specialty: string, idx: number) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-sm"
+                  >
+                    {specialty}
+                  </span>
+                ))}
+              </div>
             </div>
+
+            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+              {coach.bio}
+            </p>
+
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                {coach.experience} experience
+              </span>
+              <span className="text-red-600 dark:text-red-400 text-sm font-medium">
+                Full Profile →
+              </span>
+            </div>
+          </div>
+          
+          <div className={coach.name === "Coach Danny" ? "w-48 h-full flex-shrink-0" : "w-48 h-48 flex-shrink-0"}>
+            {coach.image && !coach.image.includes('placeholder') ? (
+              <OptimizedImage
+                src={coach.image}
+                alt={`${coach.name} - ${coach.title}`}
+                width={192}
+                height={coach.name === "Coach Danny" ? 400 : 192}
+                className={coach.name === "Coach Danny" ? "w-48 h-full object-cover" : "w-48 h-48 object-cover"}
+              />
+            ) : (
+              <div className={coach.name === "Coach Danny" ? "w-48 h-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center" : "w-48 h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center"}>
+                <span className="text-gray-600 dark:text-gray-400 text-3xl font-bold">
+                  {coach.name.split(' ').map((n: string) => n[0]).join('')}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  )
+
+  return (
+    <>
+      <section className="py-20 bg-white dark:bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Los Gatos Coaches */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-left">
+              Los Gatos Location
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {losGatosCoaches.map((coach, index) => (
+                <CoachCard
+                  key={index}
+                  coach={coach}
+                  onClick={() => openModal(coach)}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Pleasanton Coaches */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-left">
+              Pleasanton Location
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {pleasantonCoaches.map((coach, index) => (
+                <CoachCard
+                  key={index}
+                  coach={coach}
+                  onClick={() => openModal(coach)}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Free Trial Class Section */}
+          <div className="mt-16 text-center">
+            <div className="bg-blue-50 dark:bg-blue-900/20 p-8">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Try a Free Trial Class
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                The best way to experience our coaching approach is to join us for a free trial class. Meet our coaches and see if fencing is right for you!
+              </p>
+              <div className="space-y-4">
+                <p className="text-gray-600 dark:text-gray-300">
+                  <strong>Available at both locations:</strong> Los Gatos and Pleasanton
+                </p>
+                <a 
+                  href="https://calendly.com/lisaposthumus-pfn_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+                >
+                  Schedule Free Trial Class
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Full Screen Modal */}
+      {selectedCoach && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={closeModal}
+        >
+          <div 
+            className="bg-white dark:bg-gray-900 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 z-10"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div className="p-8">
+              <div className="flex flex-col lg:flex-row gap-8">
+                {/* Image */}
+                <div className="lg:w-1/3">
+                  {selectedCoach.image && !selectedCoach.image.includes('placeholder') ? (
+                    <OptimizedImage
+                      src={selectedCoach.image}
+                      alt={`${selectedCoach.name} - ${selectedCoach.title}`}
+                      width={400}
+                      height={400}
+                      className="w-full h-auto object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-96 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                      <span className="text-gray-600 dark:text-gray-400 text-6xl font-bold">
+                        {selectedCoach.name.split(' ').map((n: string) => n[0]).join('')}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="lg:w-2/3">
+                  <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                    {selectedCoach.name}
+                  </h2>
+                  <p className="text-red-600 dark:text-red-400 font-semibold text-xl mb-6">
+                    {selectedCoach.title}
+                  </p>
+
+                  <div className="mb-6">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-3 text-lg">Specialties:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedCoach.specialties.map((specialty: string, idx: number) => (
+                        <span
+                          key={idx}
+                          className="px-4 py-2 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-sm"
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {selectedCoach.achievements.length > 0 && (
+                    <div className="mb-6">
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-3 text-lg">Achievements:</h3>
+                      <ul className="space-y-2">
+                        {selectedCoach.achievements.map((achievement: string, idx: number) => (
+                          <li key={idx} className="flex items-start text-gray-600 dark:text-gray-400">
+                            <svg className="w-4 h-4 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            {achievement}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div className="mb-6">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-3 text-lg">About:</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {selectedCoach.bio}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center">
+                    <span className="text-gray-500 dark:text-gray-400">
+                      <strong>Experience:</strong> {selectedCoach.experience}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
