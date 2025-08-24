@@ -83,15 +83,15 @@ export default function Navbar() {
                 </a>
               ))}
               
-              {/* More Dropdown Button */}
+        {/* More Dropdown Button */}
               <div className="relative" ref={buttonRef}>
                 <button
                   aria-expanded={isDropdownOpen}
                   onClick={toggleDropdown}
-                  className={`flex items-center space-x-1 text-base font-medium px-4 py-2 transition-colors duration-200 ${
+          className={`flex items-center space-x-1 text-base font-medium px-4 py-2 rounded-md transition-colors duration-200 ${
                     isDropdownOpen 
                       ? 'text-primary dark:text-primary-light' 
-                      : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light'
+            : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light'
                   }`}
                 >
                   <span>More</span>
@@ -136,7 +136,7 @@ export default function Navbar() {
               <a 
                 key={item.href}
                 href={item.href} 
-                className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors duration-200"
+                className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
@@ -148,18 +148,18 @@ export default function Navbar() {
               <div className="px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400">
                 More Options
               </div>
-              {dropdownItems.map((item) => (
+        {dropdownItems.map((item) => (
                 <a 
                   key={item.href}
                   href={item.href}
                   target={item.external ? '_blank' : undefined}
                   rel={item.external ? 'noopener noreferrer' : undefined}
-                  className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors duration-200"
+          className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
-              ))}
+        ))}
             </div>
           </div>
         </div>
@@ -176,18 +176,18 @@ export default function Navbar() {
     >
       <div className="w-full h-full px-2 sm:px-4 lg:px-6">
         <div className="flex items-center justify-center h-full">
-          {dropdownItems.map((item) => (
+      {dropdownItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               target={item.external ? '_blank' : undefined}
               rel={item.external ? 'noopener noreferrer' : undefined}
-              className="text-white hover:text-gray-200 transition-colors duration-200 text-base font-medium px-4 py-2"
+  className="text-white text-base font-medium px-4 py-2 rounded-md transition-colors duration-200 hover:text-gray-400"
               onClick={() => setIsDropdownOpen(false)}
             >
               {item.label}
             </a>
-          ))}
+      ))}
         </div>
       </div>
     </div>

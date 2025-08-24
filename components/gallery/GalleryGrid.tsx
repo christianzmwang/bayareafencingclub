@@ -546,7 +546,7 @@ export default function GalleryGrid() {
         {/* Image Grid */}
         <div 
           ref={gridRef}
-          className="columns-2 sm:columns-3 lg:columns-4 xl:columns-5 gap-3 space-y-3"
+          className="masonry-columns columns-2 sm:columns-3 lg:columns-4 xl:columns-5 gap-3 space-y-3"
         >
           {visibleImages.map((image, idx) => {
             const columnWidth = getColumnWidth()
@@ -555,10 +555,11 @@ export default function GalleryGrid() {
             return (
               <div
                 key={image.id}
-                className="group relative overflow-hidden bg-gray-100 dark:bg-gray-800 cursor-pointer transition-all duration-300 hover:shadow-2xl hover:z-10 break-inside-avoid mb-3"
+                className="masonry-item group relative overflow-hidden bg-gray-100 dark:bg-gray-800 cursor-pointer transition-all duration-300 hover:shadow-2xl hover:z-10 break-inside-avoid mb-3"
                 style={{ 
                   width: '100%',
                   height: imageHeight,
+                  breakInside: 'avoid',
                   contentVisibility: 'auto',
                   containIntrinsicSize: `${imageHeight}px`
                 }}

@@ -12,6 +12,22 @@
   }
 }
 
+/* Safari-friendly Masonry helpers */
+@layer utilities {
+  .masonry-columns {
+    column-fill: balance;
+    -webkit-column-fill: balance;
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
 @layer components {
   .btn-primary {
   @apply bg-primary/90 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary transition-colors duration-200;
