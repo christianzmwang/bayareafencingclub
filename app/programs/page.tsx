@@ -129,7 +129,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Competitive Program */}
-      <section className="min-h-screen flex items-center px-4 bg-white dark:bg-gray-900 pt-16 md:pt-24">
+      <section className="min-h-screen flex items-center px-4 bg-white dark:bg-black pt-16 md:pt-24">
         <div className="max-w-7xl mx-auto w-full">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-24 text-center">
             Competitive Program

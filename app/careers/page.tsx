@@ -1,3 +1,5 @@
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import CareersHero from '@/components/careers/CareersHero'
 import JobOpenings from '@/components/careers/JobOpenings'
 import CompanyCulture from '@/components/careers/CompanyCulture'
@@ -7,11 +9,13 @@ import ApplicationProcess from '@/components/careers/ApplicationProcess'
 export default function CareersPage() {
   return (
     <main className="min-h-screen">
+      <Navbar />
       <CareersHero />
       <JobOpenings />
       <CompanyCulture />
       <Benefits />
       <ApplicationProcess />
+      <Footer />
     </main>
   )
 }
