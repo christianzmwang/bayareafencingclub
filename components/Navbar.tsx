@@ -14,7 +14,8 @@ export default function Navbar() {
   const mainNavigationItems = [
     { href: '/programs', label: 'Programs' },
     { href: '/schedules', label: 'Schedules' },
-    { href: '/competitions', label: 'Competitions' }
+    { href: '/competitions', label: 'Competitions' },
+    { href: '/gallery', label: 'Gallery' }
   ]
 
   const dropdownItems = [

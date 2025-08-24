@@ -248,7 +248,7 @@ export default function ResourceCategories() {
             href="https://calendly.com/lisaposthumus-pfn_"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-8 transition-colors duration-200"
+            className="inline-block bg-red-700 dark:bg-red-900 hover:bg-red-800 dark:hover:bg-red-950 text-white font-bold py-3 px-8 transition-colors duration-200"
           >
             Free Trial Class
           </a>

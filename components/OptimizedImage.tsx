@@ -40,7 +40,7 @@ export default function OptimizedImage({
         placeholder={placeholder}
         blurDataURL={blurDataURL}
         className={`
-          transition-all duration-300 ease-in-out
+          w-full h-auto transition-all duration-300 ease-in-out
           ${isLoading ? 'scale-110 blur-sm' : 'scale-100 blur-0'}
         `}
         onLoad={() => setIsLoading(false)}
