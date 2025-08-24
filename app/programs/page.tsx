@@ -28,26 +28,23 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* Program Overview */}
-      <section className="py-20 px-4 bg-white dark:bg-gray-900">
+    {/* Program Overview */}
+    <section className="py-20 px-4 bg-primary dark:bg-primary-dark">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Programs */}
             <div className="text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8">
-                Programs
-              </h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-primary dark:text-primary-light mb-4">Pre-Competitive</h3>
-                  <ul className="space-y-2 text-lg text-gray-600 dark:text-gray-300">
+          <h3 className="text-2xl font-bold text-white mb-4">Pre-Competitive</h3>
+          <ul className="space-y-2 text-lg text-white/90">
                     <li>Lil' Pirate</li>
                     <li>Beginning</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-primary dark:text-primary-light mb-4">Competitive</h3>
-                  <ul className="space-y-2 text-lg text-gray-600 dark:text-gray-300">
+          <h3 className="text-2xl font-bold text-white mb-4">Competitive</h3>
+          <ul className="space-y-2 text-lg text-white/90">
                     <li>Intermediate</li>
                     <li>Competitive & Elite</li>
                   </ul>
@@ -57,7 +54,7 @@ export default function ProgramsPage() {
             
             {/* Right Side - Description */}
             <div className="text-left">
-              <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-xl text-white/90 leading-relaxed">
                 Our program is divided into two parts: Pre-Competitive and Competitive. The Bay Area Fencing Club is committed to the growth and development of young people through the sport of Fencing. We recognize the importance of fostering excellence in our athletes on and off the strip, supporting the whole athlete; academically, socially, and athletically. Through teaching the values of integrity, sportsmanship, and resilience, we strive for excellence both individually and as a team.
               </p>
             </div>
