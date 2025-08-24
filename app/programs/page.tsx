@@ -29,7 +29,7 @@ export default function ProgramsPage() {
       </section>
 
     {/* Program Overview */}
-    <section className="py-20 px-4 bg-primary dark:bg-primary-dark">
+  <section className="py-20 px-4 bg-red-700 dark:bg-red-900">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Programs */}
@@ -166,18 +166,18 @@ export default function ProgramsPage() {
               </div>
             </div>
 
-            {/* Competitive and Elite - text with image to the right (below Intermediate) */}
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+    {/* Competitive and Elite - text with image to the right (below Intermediate) */}
+  <div className="bg-red-700 dark:bg-red-900 p-6 md:p-8 shadow-lg">
               <div className="grid md:grid-cols-2 gap-8 items-stretch">
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Competitive and Elite</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+      <h3 className="text-2xl font-bold text-white mb-4">Competitive and Elite</h3>
+      <p className="text-white/90 leading-relaxed mb-4">
                     The competitive/elite program includes intense footwork, blade work, and bouting, supplemented with additional conditioning. We advise taking 2 - 4 private lessons weekly. This program meets four days a week and aims to elevate your fencer to the next level, preparing them for state, national, and international competitions.
                   </p>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+      <p className="text-white/90 leading-relaxed mb-4">
                     Joining this program also lets you represent the club at local competitions, competing against other clubs locally and nationwide. To compete, a competitive USA Fencing Membership is necessary.
                   </p>
-                  <a href="https://calendly.com/lisaposthumus-pfn_" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-primary dark:text-primary-light hover:underline font-semibold">
+      <a href="https://calendly.com/lisaposthumus-pfn_" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-white hover:text-gray-100 underline font-semibold">
                     If you think your fencer is ready for this level, please click here.
                   </a>
                 </div>

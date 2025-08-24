@@ -6,11 +6,11 @@ export default function SchedulesPage() {
     <main className="min-h-screen">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-black dark:to-black h-[25vh] relative px-4 flex items-center">
+  {/* Hero Section */}
+  <section className="bg-red-700 dark:bg-red-900 h-[25vh] relative px-4 flex items-center">
         <div className="max-w-7xl mx-auto w-full">
           <div className="text-left z-10 relative">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+    <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Schedules
             </h1>
           </div>

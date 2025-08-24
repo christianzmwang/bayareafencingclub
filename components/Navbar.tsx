@@ -86,6 +86,7 @@ export default function Navbar() {
               {/* More Dropdown Button */}
               <div className="relative" ref={buttonRef}>
                 <button
+                  aria-expanded={isDropdownOpen}
                   onClick={toggleDropdown}
                   className={`flex items-center space-x-1 text-base font-medium px-4 py-2 transition-colors duration-200 ${
                     isDropdownOpen 
@@ -165,30 +166,31 @@ export default function Navbar() {
       )}
     </header>
 
-    {/* Full Screen Width Dropdown Background - Same Height as Navbar */}
-    {isDropdownOpen && (
-      <div
-        ref={dropdownRef}
-        className="fixed top-16 left-0 right-0 backdrop-blur-md bg-red-700/80 dark:bg-red-900/80 border-t border-white/30 dark:border-gray-800/50 shadow-lg z-40 h-16"
-      >
-        <div className="w-full h-full px-2 sm:px-4 lg:px-6">
-          <div className="flex items-center justify-center h-full">
-            {dropdownItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
-                className="text-white hover:text-gray-200 transition-colors duration-200 text-base font-medium px-4 py-2"
-                onClick={() => setIsDropdownOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
+    {/* Full Screen Width Dropdown Background - Same Height as Navbar (animated) */}
+    <div
+      ref={dropdownRef}
+      className={`fixed top-16 left-0 right-0 backdrop-blur-md bg-red-700/80 dark:bg-red-900/80 border-t border-white/30 dark:border-gray-800/50 z-40 h-16 transition-all duration-300 ease-in-out ${
+        isDropdownOpen ? 'opacity-100 translate-y-0 pointer-events-auto shadow-2xl' : 'opacity-0 -translate-y-2 pointer-events-none shadow-md'
+      }`}
+      aria-hidden={!isDropdownOpen}
+    >
+      <div className="w-full h-full px-2 sm:px-4 lg:px-6">
+        <div className="flex items-center justify-center h-full">
+          {dropdownItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              target={item.external ? '_blank' : undefined}
+              rel={item.external ? 'noopener noreferrer' : undefined}
+              className="text-white hover:text-gray-200 transition-colors duration-200 text-base font-medium px-4 py-2"
+              onClick={() => setIsDropdownOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       </div>
-    )}
+    </div>
     </>
   )
 }

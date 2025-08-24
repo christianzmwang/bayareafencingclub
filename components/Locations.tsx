@@ -56,13 +56,13 @@ export default function Locations() {
                   href={location.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-primary hover:bg-primary-dark text-white px-6 py-3 font-semibold transition-colors duration-200 flex-1 text-center"
+                  className="bg-primary/90 hover:bg-primary text-white px-6 py-3 font-semibold transition-colors duration-200 flex-1 text-center"
                 >
                   Get Directions
                 </a>
                 <a
                   href={`tel:${location.phone}`}
-                  className="border-2 border-primary text-primary dark:text-primary-light hover:bg-primary hover:text-white dark:hover:bg-primary-light dark:hover:text-white px-6 py-3 font-semibold transition-all duration-200 flex-1 text-center"
+                  className="border-2 border-primary text-primary dark:text-primary-light hover:bg-primary/90 hover:text-white dark:hover:bg-primary dark:hover:text-white px-6 py-3 font-semibold transition-all duration-200 flex-1 text-center"
                 >
                   Call Now
                 </a>

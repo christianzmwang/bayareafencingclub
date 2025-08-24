@@ -123,7 +123,7 @@ export default function UpcomingEvents() {
                 </div>
                 
                 <div className="flex gap-3">
-                  <button className="flex-1 bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-200">
+                  <button className="flex-1 bg-primary/90 hover:bg-primary text-white py-3 rounded-lg font-semibold transition-colors duration-200">
                     Register Now
                   </button>
                   <button className="px-4 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">

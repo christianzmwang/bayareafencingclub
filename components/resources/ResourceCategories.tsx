@@ -40,7 +40,7 @@ export default function ResourceCategories() {
                 href="https://member.usafencing.org/signup" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 font-semibold transition-colors duration-200"
+                className="inline-flex items-center bg-primary/90 hover:bg-primary text-white px-6 py-3 font-semibold transition-colors duration-200"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-2M14 4h6m0 0v6m0-6L10 14" />
@@ -380,7 +380,7 @@ export default function ResourceCategories() {
             href="https://calendly.com/lisaposthumus-pfn_"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-red-700 dark:bg-red-900 hover:bg-red-800 dark:hover:bg-red-950 text-white font-bold py-3 px-8 transition-colors duration-200"
+            className="inline-block bg-primary/90 hover:bg-primary text-white font-bold py-3 px-8 transition-colors duration-200"
           >
             Schedule Free Trial Class
           </a>

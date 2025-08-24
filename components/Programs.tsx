@@ -77,7 +77,7 @@ export default function Programs() {
                 ))}
               </ul>
               
-              <button className="w-full bg-primary hover:bg-primary-dark text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200">
+              <button className="w-full bg-primary/90 hover:bg-primary text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200">
                 Enroll Now
               </button>
             </div>

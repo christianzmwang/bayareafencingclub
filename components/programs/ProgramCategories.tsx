@@ -84,7 +84,7 @@ export default function ProgramCategories() {
                   <span className="font-medium">{program.level}</span>
                 </div>
               </div>
-              <button className="w-full mt-4 bg-primary text-white py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200">
+              <button className="w-full mt-4 bg-primary/90 hover:bg-primary text-white py-2 rounded-lg transition-colors duration-200">
                 Learn More
               </button>
             </div>
