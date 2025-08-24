@@ -52,6 +52,7 @@ export default function Navbar() {
   }, [isDropdownOpen])
 
   return (
+    <>
     <header className="backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-white/20 dark:border-gray-800/50 shadow-lg sticky top-0 z-50 transition-all duration-300 w-full">
       <div className="w-full px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between items-center h-16">
@@ -124,27 +125,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Full Screen Width Dropdown Background - Same Height as Navbar */}
-      {isDropdownOpen && (
-        <div className="absolute top-full left-0 right-0 backdrop-blur-md bg-white/70 dark:bg-black/70 border-t border-white/20 dark:border-gray-800/50 shadow-lg z-40 h-16" ref={dropdownRef}>
-          <div className="w-full h-full px-2 sm:px-4 lg:px-6">
-            <div className="flex items-center justify-center h-full">
-              {dropdownItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  target={item.external ? '_blank' : undefined}
-                  rel={item.external ? 'noopener noreferrer' : undefined}
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors duration-200 text-base font-medium px-4 py-2"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+  {/* Dropdown moved outside header to avoid backdrop clipping */}
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
@@ -183,5 +164,31 @@ export default function Navbar() {
         </div>
       )}
     </header>
+
+    {/* Full Screen Width Dropdown Background - Same Height as Navbar */}
+    {isDropdownOpen && (
+      <div
+        ref={dropdownRef}
+        className="fixed top-16 left-0 right-0 backdrop-blur-md bg-red-700/80 dark:bg-red-900/80 border-t border-white/30 dark:border-gray-800/50 shadow-lg z-40 h-16"
+      >
+        <div className="w-full h-full px-2 sm:px-4 lg:px-6">
+          <div className="flex items-center justify-center h-full">
+            {dropdownItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
+                className="text-white hover:text-gray-200 transition-colors duration-200 text-base font-medium px-4 py-2"
+                onClick={() => setIsDropdownOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   )
 }

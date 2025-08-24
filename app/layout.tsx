@@ -11,8 +11,9 @@ export const metadata: Metadata = {
   keywords: 'fencing, bay area, los gatos, pleasanton, fencing club, fencing lessons',
   icons: {
     icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/images/general/logo.png', type: 'image/png' },
     ],
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
@@ -28,8 +29,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://images.spr.so" crossOrigin="" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/images/general/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={inter.className}>
